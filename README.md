@@ -1,2 +1,2 @@
 # boost
-Boost!, rapid web publishing for the masses.
+Boost!, rapid web authoring platform for the masses.
