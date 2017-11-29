@@ -11,7 +11,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 group = 'io.github.cq'
@@ -27,11 +26,21 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	// webjars
+	compile 'org.webjars:jquery:3.2.1'
+	compile 'org.webjars:bootstrap:3.3.7-1'
+	compile 'org.webjars:bootswatch-paper:3.3.7'
+	compile 'org.webjars:font-awesome:4.7.0'
+	// runtime
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
+	// testing libraries
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+/**
+ * All: clean, build and test product; no deployment though.
+ */
 task all(type: GradleBuild) {
      tasks = ['clean', 'build']
 }
