@@ -27,4 +27,4 @@ Run Local (in-memory)
 Run Local in production mode
 
 	$ export SPRING_PROFILES_ACTIVE=prod
-	$ java -jar build/target/server.jar
+	$ java -jar build/target/server.jar	
