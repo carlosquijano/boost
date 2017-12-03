@@ -22,9 +22,19 @@ Run using the gradle wrapper
 
 Run Local (in-memory)
 
-	$ java -jar build/target/server.jar
+	$ java -jar build/libs/boost-0.1.0.jar
 
-Run Local in production mode
+Run Local in development mode
 
-	$ export SPRING_PROFILES_ACTIVE=prod
-	$ java -jar build/target/server.jar	
+	$ export SPRING_PROFILES_ACTIVE=dev
+	$ java -jar build/boost-0.1.0.jar
+
+### Docker Compose
+
+See the following examples on how to build and run the application using docker and compose:
+
+Run a Development docker environment
+
+	$  docker-compose -f env/dev/docker-compose.yml up
+
+	
