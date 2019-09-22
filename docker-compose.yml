@@ -16,7 +16,7 @@ services:
   # application service
   boost:
     build:
-      context: ../../
+      context: ./
       args:
         - JAR_FILE=build/libs/boost-0.1.0.jar
     ports:
