@@ -1,5 +1,5 @@
 # boost!
-**boost!**, rapid web authoring platform for the masses.
+**boost!**, rapid web publishing for the masses.
 
 ## Build and Test
 
@@ -10,18 +10,12 @@
 - Gradle 3+
 - Docker Engine 1.13+
 
-Use the `all` task to perform a `build` and `test` everything:
+### Running a Developer Environment
 
-	$ ./gradlew all
+Bring up the dependencies
 
-### Running `boost!`
+	$  docker-compose up
 
-Run dependencies using docker compose
+Once all the dependencies are up you can run an application instance using gradle:
 
-	$  ./docker-compose up
-
-Once all the dependencies are up and running you can run a boost! instance using either plain java or the spring boot gradle script:
-
-	$ ./gradlew bootRun
-
-	$ java -jar build/libs/boost-0.1.0.jar
+	$ gradlew bootRun
