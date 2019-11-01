@@ -1,8 +1,10 @@
 package io.github.cq.boost.entity;
 
-import io.github.cq.boost.client.ObjectDTO;
+import io.github.cq.boost.client.ClientDTO;
+import io.github.cq.boost.client.ObjectType;
 import io.github.cq.boost.util.BoostConstants;
-import io.github.cq.boost.util.ObjectTypes;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalTime;
@@ -13,10 +15,10 @@ import static io.github.cq.boost.util.BoostConstants.COLUMN_SMALLTEXT_LENGTH;
 @Entity
 @Table(name = BoostConstants.OBJECT_ENTITY_NAME)
 @DiscriminatorValue(BoostConstants.OBJECT_ENTITY_NAME)
-public class ObjectEntity extends AbstractBaseEntity<Long, ObjectDTO> {
+public class ObjectEntity extends AbstractBaseEntity<Long, ClientDTO> {
 
     @Column(name = "object_type", nullable = false)
-    private ObjectTypes objectType;
+    private ObjectType objectType;
 
     @Column(length = COLUMN_SMALLTEXT_LENGTH)
     private String title;
@@ -24,20 +26,22 @@ public class ObjectEntity extends AbstractBaseEntity<Long, ObjectDTO> {
     @Column(length = COLUMN_MEDIUMTEXT_LENGTH)
     private String summary;
 
+    @CreatedBy
     @Column(name = "created_by", length = COLUMN_SMALLTEXT_LENGTH)
     private String createdBy;
 
-    @Column(name = "created_on", nullable = false)
+    @Column(name = "created_on", nullable = false, updatable = false)
+    @CreatedDate
     private LocalTime createdOn;
 
     @Version
     private Integer version;
 
-    public ObjectTypes getObjectType() {
+    public ObjectType getObjectType() {
         return objectType;
     }
 
-    public void setObjectType(ObjectTypes objectType) {
+    public void setObjectType(ObjectType objectType) {
         this.objectType = objectType;
     }
 

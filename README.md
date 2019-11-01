@@ -1,14 +1,20 @@
 # boost!
-**boost!**, rapid web publishing for the masses.
+**boost!**, a backend for the masses.
 
 ## Build and Test
 
 ### Minimum Requirements
 
 - Git
-- JDK 8+
-- Gradle 3+
+- Java 8
+- Gradle
 - Docker Engine 1.13+
+
+### Build
+
+Perform a clean build using the `all` gradle task:
+
+    $ ./gradlew all
 
 ### Running a Developer Environment
 
