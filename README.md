@@ -1,2 +1,2 @@
-# boost
-Boost!, rapid web publishing for the masses.
+# boost!
+boost! a lightweight java backend.
