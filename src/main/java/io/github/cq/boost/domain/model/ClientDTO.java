@@ -1,4 +1,4 @@
-package io.github.cq.boost.client;
+package io.github.cq.boost.domain.model;
 
 import java.io.Serializable;
 

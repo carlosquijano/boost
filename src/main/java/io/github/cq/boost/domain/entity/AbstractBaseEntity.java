@@ -1,4 +1,4 @@
-package io.github.cq.boost.entity;
+package io.github.cq.boost.domain.entity;
 
 
 import javax.persistence.*;

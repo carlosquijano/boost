@@ -1,10 +1,10 @@
-package io.github.cq.boost.controller;
+package io.github.cq.boost.domain.rest.controller;
 
 import io.github.cq.boost.BoostDataException;
-import io.github.cq.boost.client.ClientDTO;
+import io.github.cq.boost.domain.model.ClientDTO;
 import org.springframework.http.ResponseEntity;
 
-public interface CrudAwareController<T extends ClientDTO, ID>
+public interface PersistenceAwareController<T extends ClientDTO, ID>
 {
     ResponseEntity<T> show(final ID id) throws BoostDataException;
 

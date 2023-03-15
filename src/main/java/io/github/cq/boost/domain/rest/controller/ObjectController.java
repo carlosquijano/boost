@@ -1,8 +1,8 @@
-package io.github.cq.boost.controller;
+package io.github.cq.boost.domain.rest.controller;
 
 import io.github.cq.boost.BoostDataException;
-import io.github.cq.boost.client.ObjectDTO;
-import io.github.cq.boost.service.ObjectService;
+import io.github.cq.boost.domain.model.ObjectDTO;
+import io.github.cq.boost.domain.service.ObjectService;
 import io.github.cq.boost.util.BoostMappings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(BoostMappings.OBJECT_ROUTE)
-public class ObjectController implements CrudAwareController<ObjectDTO, Long>
+public class ObjectController implements PersistenceAwareController<ObjectDTO, Long>
 {
     private static final Logger logger = LoggerFactory.getLogger(ObjectController.class);
 
-    private ObjectService objectService;
+    private final ObjectService objectService;
 
     public ObjectController(final ObjectService objectService)
     {

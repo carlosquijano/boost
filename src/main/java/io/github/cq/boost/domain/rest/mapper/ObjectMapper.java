@@ -1,7 +1,7 @@
-package io.github.cq.boost.mapper;
+package io.github.cq.boost.domain.rest.mapper;
 
-import io.github.cq.boost.client.ObjectDTO;
-import io.github.cq.boost.entity.ObjectEntity;
+import io.github.cq.boost.domain.model.ObjectDTO;
+import io.github.cq.boost.domain.entity.ObjectEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

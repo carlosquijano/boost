@@ -1,23 +1,41 @@
-package io.github.cq.boost.client;
+package io.github.cq.boost.domain.entity;
 
+import io.github.cq.boost.domain.model.ClientDTO;
+import io.github.cq.boost.domain.model.ObjectType;
+import io.github.cq.boost.util.BoostConstants;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.time.LocalTime;
 
-public final class ObjectDTO implements ClientDTO {
-    private Long id;
+import static io.github.cq.boost.util.BoostConstants.COLUMN_TEXT_MEDIUM_LENGTH;
+import static io.github.cq.boost.util.BoostConstants.COLUMN_TEXT_SMALL_LENGTH;
+
+@Entity
+@Table(name = BoostConstants.OBJECT_ENTITY_NAME)
+@DiscriminatorValue(BoostConstants.OBJECT_ENTITY_NAME)
+public class ObjectEntity extends AbstractBaseEntity<Long, ClientDTO> {
+
+    @Column(name = "object_type", nullable = false)
     private ObjectType objectType;
+
+    @Column(length = COLUMN_TEXT_SMALL_LENGTH)
     private String title;
+
+    @Column(length = COLUMN_TEXT_MEDIUM_LENGTH)
     private String summary;
+
+    @CreatedBy
+    @Column(name = "created_by", length = COLUMN_TEXT_SMALL_LENGTH)
     private String createdBy;
+
+    @Column(name = "created_on", nullable = false, updatable = false)
+    @CreatedDate
     private LocalTime createdOn;
+
+    @Version
     private Integer version;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public ObjectType getObjectType() {
         return objectType;

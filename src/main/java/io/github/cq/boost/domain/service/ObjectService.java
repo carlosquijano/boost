@@ -1,10 +1,10 @@
-package io.github.cq.boost.service;
+package io.github.cq.boost.domain.service;
 
-import io.github.cq.boost.client.ObjectDTO;
-import io.github.cq.boost.client.ObjectType;
-import io.github.cq.boost.entity.ObjectEntity;
-import io.github.cq.boost.mapper.ObjectMapper;
-import io.github.cq.boost.repository.ObjectRepository;
+import io.github.cq.boost.domain.model.ObjectDTO;
+import io.github.cq.boost.domain.model.ObjectType;
+import io.github.cq.boost.domain.entity.ObjectEntity;
+import io.github.cq.boost.domain.rest.mapper.ObjectMapper;
+import io.github.cq.boost.domain.repository.ObjectRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
