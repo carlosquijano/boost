@@ -12,12 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 abstract class BoostApplicationTests {
 
-	@Autowired
-	private ApplicationContext applicationContext;
+    @Autowired
+    private ApplicationContext applicationContext;
 
-	@Test
-	public void contextLoads() {
-		Assert.assertNotNull(applicationContext);
-	}
+    @Test
+    public void contextLoads() {
+        Assert.assertNotNull(applicationContext);
+    }
 
 }

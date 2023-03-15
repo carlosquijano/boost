@@ -2,7 +2,6 @@ package io.github.cq.boost.domain.service;
 
 import io.github.cq.boost.domain.entity.ObjectEntity;
 import io.github.cq.boost.domain.repository.ObjectRepository;
-import io.github.cq.boost.domain.service.ObjectService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
