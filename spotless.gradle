@@ -1,0 +1,9 @@
+spotless {
+    java {
+        importOrder('java|javax', 'io.github.cq.boost', '', '\\#io.github.cq.boost', '\\#')
+        removeUnusedImports()
+        formatAnnotations()
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+    }
+}

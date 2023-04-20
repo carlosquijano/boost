@@ -1,0 +1,5 @@
+findProject(':server')?.name = 'boost-server'
+include 'server'
+include 'data'
+include 'core'
+

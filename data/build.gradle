@@ -1,0 +1,40 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'maven-publish'
+    id 'io.spring.dependency-management'
+    id 'com.diffplug.spotless'
+    id 'io.freefair.lombok'
+}
+
+group 'io.github.cq.boost.data'
+version = project(':data').file('version').text.trim()
+sourceCompatibility = '17'
+
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+dependencies {
+    implementation project(":core")
+
+    // Spring Boot
+    api "org.springframework.boot:spring-boot-starter-data-jpa"
+
+    // Hypersistence Utils
+    // https://vladmihalcea.com/basejparepository-hypersistence-utils/
+    api 'io.hypersistence:hypersistence-utils-hibernate-60:3.3.1'
+    api 'com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.14.2'
+
+    // Spring Boot Testing
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    runtimeOnly 'com.h2database:h2'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,31 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'maven-publish'
+    id 'io.spring.dependency-management'
+    id 'com.diffplug.spotless'
+    id 'io.freefair.lombok'
+}
+
+group 'io.github.cq.boost.core'
+version = project(':core').file('version').text.trim()
+sourceCompatibility = '17'
+
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+dependencies {
+    // Spring Boot Testing
+    api "org.springframework.boot:spring-boot-starter-test"
+    api 'org.junit.jupiter:junit-jupiter'
+    runtimeOnly 'com.h2database:h2'
+}
+
+test {
+    useJUnitPlatform()
+}
