@@ -8,3 +8,4 @@
  */
 
 rootProject.name = "boost"
+include("server")
